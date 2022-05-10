@@ -9,10 +9,6 @@ logger = logging.getLogger(__name__)
 
 def concat_title_and_body(did, corpus, sep):
     document = []
-    logger.info(did)
-    logger.info(type(did))
-    logger.info(type(corpus))
-    logger.info(corpus.keys())
     title = corpus[int(did)]['title'].strip()
     body = corpus[int(did)]['text'].strip()
     if len(title):
