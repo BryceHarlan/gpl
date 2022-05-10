@@ -13,8 +13,8 @@ def concat_title_and_body(did, corpus, sep):
     logger.info(type(did))
     logger.info(type(corpus))
     logger.info(corpus.keys())
-    title = corpus[str(did)]['title'].strip()
-    body = corpus[str(did)]['text'].strip()
+    title = corpus[int(did)]['title'].strip()
+    body = corpus[int(did)]['text'].strip()
     if len(title):
         document.append(title)
     if len(body):
