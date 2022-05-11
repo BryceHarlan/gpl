@@ -185,7 +185,8 @@ def train(
             checkpoint_save_total_limit=10000,
             output_path=output_dir,
             checkpoint_path=output_dir,
-            use_amp=use_amp
+            use_amp=use_amp,
+            show_progress_bar=True
         )
     else:
         logger.info('Trained GPL model found. Now skip training')
