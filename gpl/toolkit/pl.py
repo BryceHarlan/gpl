@@ -74,7 +74,8 @@ class PseudoLabeler(object):
             labels = scores[:len(query)] - scores[len(query):]
             labels = labels.tolist()  # Using `tolist` will keep more precision digits!!!
             
-            batch_gpl = map(lambda quad: '\t'.join((*quad[:3], str(quad[3]))) + '\n', zip(query_id, pos_id, neg_id, labels))
+
+            batch_gpl = map(lambda quad: '\t'.join((*[str(x) for x in quad[:3]], str(quad[3]))) + '\n', zip(query_id, pos_id, neg_id, labels))
             data.extend(batch_gpl)
         
         logger.info('Done pseudo labeling and saving data')
